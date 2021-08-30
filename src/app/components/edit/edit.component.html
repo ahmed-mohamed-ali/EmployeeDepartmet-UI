@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div id="formDiv">
+                <h2>Edit</h2>
+                <br>
+                <form name="signUpForm" #EditForm="ngForm" (ngSubmit)="onSubmit(EditForm)">
+                    <!-- first name -->
+
+                    <div class="form-group">
+                        <input class="form-control formElement" type="text" #fname="ngModel" [(ngModel)]="employee.FirstName" name="fname" placeholder="First Name" required minlength="2" maxlength="20" pattern="^[a-zA-Z\s]+$">
+                        <div class="msg alert alert-warning" role="alert" *ngIf="fname.touched && fname.errors">
+                            <span *ngIf="fname.errors.required">First name is required.... </span>
+                            <span *ngIf="fname.errors.pattern"> First name field does not valid spaces or numbers.... </span>
+                            <span *ngIf="fname.errors.maxlength">first name length must be less than
+                                    20 characters.... </span>
+                            <span *ngIf="fname.errors.minlength">first name length must be more than
+                                    2 characters.... </span>
+                        </div>
+                    </div>
+
+
+                    <!-- Last name -->
+
+                    <div class="form-group">
+                        <input class="form-control formElement" type="text" #lname="ngModel" [(ngModel)]="employee.LastName" name="lname" placeholder="Last Name" required minlength="2" maxlength="20" pattern="^[a-zA-Z\s]+$">
+                        <div class="msg alert alert-warning" role="alert" *ngIf="lname.touched && lname.errors">
+                            <span *ngIf="lname.errors.required">last name is required.... </span>
+                            <span *ngIf="lname.errors.pattern"> last name field does not valid spaces or numbers.... </span>
+                            <span *ngIf="lname.errors.maxlength">last name length must be less than
+                                    20 characters.... </span>
+                            <span *ngIf="lname.errors.minlength">last length must be more than
+                                    2 characters.... </span>
+                        </div>
+                    </div>
+
+
+                    <!--Phone Number -->
+                    <div class="form-group">
+                        <input class="form-control formElement" type="text" #pnum="ngModel" [(ngModel)]="employee.PhoneNumber" name="pnum" placeholder="Phone number" required pattern="(01)[0-9]{9}">
+
+
+
+                        <div class="msg alert alert-warning" role="alert" *ngIf="pnum.touched && pnum.errors">
+                            <span *ngIf="pnum.errors.required">Phone number is required.... </span>
+                            <span *ngIf="pnum.errors.pattern">Phone number pattern is wroong.... </span>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Date -->
+                    <div class="form-group">
+                        <input class="form-control formElement" type="date" #DOB="ngModel" [(ngModel)]="employee.DOB" name="DOB" required>
+
+
+                        <div class="msg alert alert-warning" role="alert" *ngIf="DOB.touched && DOB.errors">
+                            <span *ngIf="DOB.errors.required"> date is required.... </span>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <select aria-label="Default select example" class="form-select form-control formElement" id="region" required [(ngModel)]="employee.DepartmentId" name="DepartmentId" #DepartmentId="ngModel">
+                              <option style="color: dimgrey;" value="" disabled selected hidden>Select Department</option>
+                             
+                              <option *ngFor="let dept of departments" [value]="dept.Id">{{dept.DepartmentName}}</option>
+                            </select>
+                        <div class="msg alert alert-warning" role="alert" [hidden]="DepartmentId.valid || DepartmentId.pristine">
+                            Department is required....
+                        </div>
+                    </div>
+
+
+
+                    <!-- Button -->
+
+
+                    <div id="submitBtn" class="form-group">
+                        <button type="submit" id="submit" class="button" [disabled]="EditForm.invalid==true">
+                                SUBMIT </button>
+                    </div>
+                    <br>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

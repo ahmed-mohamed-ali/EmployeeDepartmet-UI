@@ -1,8 +1,23 @@
-<p>home works!</p>
-<h1>Example heading <span class="badge badge-secondary">New</span></h1>
-<h2>Example heading <span class="badge badge-secondary">New</span></h2>
-<h3>Example heading <span class="badge badge-secondary">New</span></h3>
-<h4>Example heading <span class="badge badge-secondary">New</span></h4>
-<h5>Example heading <span class="badge badge-secondary">New</span></h5>
-<h6>Example heading <span class="badge badge-secondary">New</span></h6>
-<button type="button" class="btn btn-primary">ss</button>
+<div *ngIf="Employees;else noemp" class="container">
+    <div class="text-center .display-1 py-3 mt-3 title  ">Employees</div>
+    <div class="row">
+        <button class="col-4 offset-4 custombtn" (click)="register()">Create Employee</button>
+    </div>
+
+    <div *ngIf="Employees.length>0;else empty" class="row">
+
+        <app-employee *ngFor="let emp of Employees" [empInfo]=emp class="col-sm-6 col-lg-4"></app-employee>
+    </div>
+    <ng-template #empty class="row align-items-center">
+        <p class="col alert alert-danger text-center mt-5">There is No Employee</p>
+    </ng-template>
+
+</div>
+<ng-template #noemp class="container">
+    <div class="row">
+        <div class="col">
+
+            <app-internal-server-error></app-internal-server-error>
+        </div>
+    </div>
+</ng-template>

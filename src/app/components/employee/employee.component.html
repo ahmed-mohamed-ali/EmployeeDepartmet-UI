@@ -1,0 +1,24 @@
+<div>
+
+    <div id="card" class="card align-self-between mt-0 p-3 mb-5">
+        <form class="card-details">
+            <div class="form-group">
+
+                <div>
+                    <div>
+                        <span class="need">Name: </span>
+                        <span class="text-dark">{{employee.FirstName+" "+employee.LastName}}</span>
+                    </div>
+                    <div>
+                        <span class="need">Department : </span>
+                        <span class="text-dark">{{ employee.Department.DepartmentName}}</span>
+                    </div>
+
+                </div>
+
+                <button type="button" (click)="getDetials(employee.Id)"> Details  </button>
+            </div>
+        </form>
+    </div>
+
+</div>

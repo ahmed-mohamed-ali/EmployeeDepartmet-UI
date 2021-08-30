@@ -1,0 +1,52 @@
+<div *ngIf="Employee;else noemp" class="container mycontainer">
+    <dl class="row ">
+        <dt class="col-sm-5">Employee Name</dt>
+        <dd class="col-sm-6">{{Employee?.FirstName+" "+Employee?.LastName}}</dd>
+
+        <dt class="col-sm-5">Phone Number</dt>
+        <dd class="col-sm-6">{{Employee?.PhoneNumber}}</dd>
+
+        <dt class="col-sm-5">Data Of Birth</dt>
+        <dd class="col-sm-6">{{Employee?.DOB|date:'fullDate'}}</dd>
+
+        <dt class="col-sm-5 text-truncate">Department</dt>
+        <dd class="col-sm-6">{{Employee?.Department?.DepartmentName}}</dd>
+
+
+    </dl>
+    <div class="row justify-content-around pt-5">
+
+        <button class="col-md-3  custombtn" (click)="Edit()">Edit</button>
+
+        <button type="button" class="col-md-3 custombtn" data-toggle="modal" data-target="#exampleModal">Delete</button>
+    </div>
+</div>
+<ng-template #noemp class="container">
+    <div class="row">
+        <div class="col">
+
+            <app-internal-server-error></app-internal-server-error>
+        </div>
+    </div>
+</ng-template>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                Are you sure,you will Delete Employee?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="Delete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
