@@ -11,6 +11,7 @@ import { InternalServerErrorComponent } from './components/internal-server-error
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from './components/edit/edit.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditComponent } from './components/edit/edit.component';
     EmployeeComponent,
     InternalServerErrorComponent,
     RegisterComponent,
-    EditComponent
+    EditComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

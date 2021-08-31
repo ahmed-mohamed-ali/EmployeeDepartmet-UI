@@ -17,17 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(private APIservice:APIService,private router:Router) { }
 
   ngOnInit(): void {
-    this.registerSucceed=false;
-    this.employee={
-      "FirstName": "",
-        "LastName": "",
-        "PhoneNumber": "",
-        "DOB": new Date(),
-        "DepartmentId":""
-    }
-
-    // get Department
-    this.subscriber=this.APIservice.getDepartments().subscribe(
+     // get Department
+     this.subscriber=this.APIservice.getDepartments().subscribe(
       
       res=>{
         let response=res;
@@ -39,6 +30,19 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['serverError'])
       }
       )
+
+
+
+    this.registerSucceed=false;
+    this.employee={
+      "FirstName": "",
+        "LastName": "",
+        "PhoneNumber": "",
+        "DOB": new Date(),
+        "DepartmentId":""
+    }
+
+   
   }
 
   onSubmit(form: NgForm) {

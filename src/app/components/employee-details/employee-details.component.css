@@ -1,6 +1,6 @@
         .mycontainer {
             margin-top: 50px;
-            width: 40%;
+            width: 60%;
         }
         
         dl {
@@ -112,34 +112,21 @@
                 padding: 6px;
             }
         }
-        /* .custombtn {
+        
+        .custombtn {
             margin-bottom: 30px;
             padding: 10px 0;
             font-size: 24px;
             font-weight: 400;
-            color: #DC3545;
-            background-color: white;
+            color: darkmagenta;
+            background-color: #DC3545;
             border: 2px solid #DC3545;
             border-radius: 7px;
             transition: all .1s ease-in-out;
         }
         
         .custombtn:hover {
-            background-color: #DC3545;
-            color: white;
+            background-color: darkmagenta;
+            color: #DC3545;
             border: 1px solid blanchedalmond;
         }
-        
-        @media screen and (max-width: 770px) {
-            .custombtn {
-                font-size: 20px;
-                font-weight: 400;
-            }
-        }
-        
-        @media screen and (max-width: 770px) {
-            .custombtn {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        } */

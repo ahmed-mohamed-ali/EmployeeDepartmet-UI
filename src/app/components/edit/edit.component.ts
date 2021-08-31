@@ -11,7 +11,7 @@ import { APIService } from 'src/app/services/api.service';
 export class EditComponent implements OnInit {
   employeeId: any;
   subscriber: any;
-  Employee: any={};
+  Employee: any;
   employee: { FirstName: string; LastName: string; PhoneNumber: string; DOB: Date; DepartmentId: string; };
   departments: Object;
 

@@ -20,7 +20,7 @@ h2 {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    width: 50%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
@@ -36,7 +36,7 @@ h2 {
     background-color: white;
     border-color: #DC3545;
     border-width: 1px;
-    width: 70%;
+    width: 80%;
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -73,7 +73,7 @@ h2 {
 @media screen and (max-width: 780px) {
     input,
     select {
-        font-size: 10px;
+        font-size: 14px;
     }
     select {
         line-height: 3;
